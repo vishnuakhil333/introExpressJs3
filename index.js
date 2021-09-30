@@ -18,7 +18,7 @@ const initializeDBAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3000, () => {
+    app.listen(3001, () => {
       console.log("Server Running at http://localhost:3000/");
     });
   } catch (e) {
@@ -166,6 +166,20 @@ app.post("/ratings", async (req, res) => {
     res.send("Review added with id", response.id, "added");
   } catch (error) {
     console.log(error.message);
+  }
+});
+
+app.get("/ratings", async (req, res) => {
+  const query = `
+        SELECT * FROM RATINGS_INFO;
+    `;
+  let reviews;
+  try {
+    reviews = await db.all(query);
+    res.send(reviews);
+    //what if the list is empty
+  } catch (error) {
+    console.log(error);
   }
 });
 

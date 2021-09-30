@@ -52,7 +52,12 @@ GET http://localhost:3000/authors/1/books/
 
 ###
 
-POST http://localhost:3000/ratings/
+GET http://localhost:3001/ratings/
+
+
+###
+
+POST http://localhost:3001/ratings/
 Content-Type: application/json
 
 {

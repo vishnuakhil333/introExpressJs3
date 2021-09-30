@@ -11,6 +11,10 @@ const dbPath = path.join(__dirname, "goodreads.db");
 console.log(dbPath);
 
 let db = null;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
 const initializeDBAndServer = async () => {
   try {
@@ -18,7 +22,7 @@ const initializeDBAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(3001, () => {
+    app.listen(port, () => {
       console.log("Server Running at http://localhost:3000/");
     });
   } catch (e) {

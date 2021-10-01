@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
 //     "Origin, X-Requested-With, Content-Type, Accept"
 //   );
   res.set({
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://29eng.csb.app/',
         'Access-Control-Allow-Methods': 'DELETE,GET,PATCH,POST,PUT',
         'Access-Control-Allow-Headers': 'Content-Type,Authorization'
     });

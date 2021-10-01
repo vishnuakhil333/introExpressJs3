@@ -57,7 +57,7 @@ GET http://localhost:3001/ratings/
 
 ###
 
-POST http://localhost:3001/ratings/
+POST https://anime-nodejs.herokuapp.com/ratings/
 Content-Type: application/json
 
 {
